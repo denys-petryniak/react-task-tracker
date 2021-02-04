@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Header from './components/Header';
-import Tasks from './components/Tasks'
-import AddTask from './components/AddTask';
+import Header from './components/Header/Header';
+import Tasks from './components/Tasks/Tasks'
+import AddTask from './components/AddTaskForm/AddTaskForm'
 
 const App = () => {
 	const [showAddTask, setShowAddTask] = useState(false)

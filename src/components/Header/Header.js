@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
-import Button from './Button'
+import Button from '../UI/Button/Button'
+import styles from './Header.module.scss';
 
 const Header = ({ title, onAdd, showAdd }) => {
 	return (
-		<header className='header'>
+		<header className={styles.Header}>
 			<h1>{ title }</h1>
 			<Button
 				color={showAdd ? 'red' : 'green'}

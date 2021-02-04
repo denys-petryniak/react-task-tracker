@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import styles from './AddTaskForm.module.scss';
+import btnStyles from '../UI/Button/Button.module.scss';
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('');
@@ -21,8 +23,8 @@ const AddTask = ({ onAdd }) => {
     }
 
     return (
-        <form className='add-form' onSubmit={onSubmit}>
-            <div className='form-control'>
+        <form className={styles.addForm} onSubmit={onSubmit}>
+            <div className={styles.formControl}>
                 <label>Task</label>
                 <input
                     type='text'
@@ -31,7 +33,7 @@ const AddTask = ({ onAdd }) => {
                     onChange={(e) => {setText(e.target.value)}}
                 />
             </div>
-            <div className='form-control'>
+            <div className={styles.formControl}>
                 <label>Day & Time</label>
                 <input
                     type='text'
@@ -40,7 +42,7 @@ const AddTask = ({ onAdd }) => {
                     onChange={(e) => {setDay(e.target.value)}}
                 />
             </div>
-            <div className='form-control form-control-check'>
+            <div className={`${styles.formControl} ${styles.formControlCheck}`}>
                 <label>Set Reminder</label>
                 <input
                     type='checkbox'
@@ -49,7 +51,11 @@ const AddTask = ({ onAdd }) => {
                     onChange={(e) => {setReminder(e.currentTarget.checked)}}
                 />
             </div>
-            <input type='submit' value='Save Task' className='btn btn-block' />
+            <input
+                type='submit'
+                value='Save Task'
+                className={`${btnStyles.btn} ${btnStyles.btnBlock}`}
+            />
         </form>
     )
 }
