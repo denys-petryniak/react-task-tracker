@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from 'prop-types';
 import Button from '../UI/Button/Button'
 import styles from './Header.module.scss';
